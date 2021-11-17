@@ -5,8 +5,8 @@ template <typename T>
 class Node {
 
 private:
-	T entry;
-	Node<T>* next_node;
+	T m_entry;
+	Node<T>* m_next_node;
 	
 public:
 	Node();
