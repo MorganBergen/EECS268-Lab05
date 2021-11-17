@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EB5716E92745653000CEB134 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = EB5716E8274564D200CEB134 /* makefile */; };
 		EB5716EE2745658000CEB134 /* Node.hpp in Sources */ = {isa = PBXBuildFile; fileRef = EB5716ED2745658000CEB134 /* Node.hpp */; };
+		EB5716F12745691400CEB134 /* LinkedList.hpp in Sources */ = {isa = PBXBuildFile; fileRef = EB5716F02745691400CEB134 /* LinkedList.hpp */; };
 		EB72E58027455F3100BD3D97 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB72E57F27455F3100BD3D97 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,8 @@
 		EB5716E8274564D200CEB134 /* makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
 		EB5716ED2745658000CEB134 /* Node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
 		EB5716EF2745658B00CEB134 /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		EB5716F02745691400CEB134 /* LinkedList.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LinkedList.hpp; sourceTree = "<group>"; };
+		EB5716F22745692800CEB134 /* LinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkedList.h; sourceTree = "<group>"; };
 		EB72E57C27455F3100BD3D97 /* EECS268-Lab05 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "EECS268-Lab05"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB72E57F27455F3100BD3D97 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +69,8 @@
 				EB5716ED2745658000CEB134 /* Node.hpp */,
 				EB5716EF2745658B00CEB134 /* Node.h */,
 				EB72E57F27455F3100BD3D97 /* main.cpp */,
+				EB5716F02745691400CEB134 /* LinkedList.hpp */,
+				EB5716F22745692800CEB134 /* LinkedList.h */,
 			);
 			path = "EECS268-Lab05";
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			files = (
 				EB5716EE2745658000CEB134 /* Node.hpp in Sources */,
 				EB5716E92745653000CEB134 /* makefile in Sources */,
+				EB5716F12745691400CEB134 /* LinkedList.hpp in Sources */,
 				EB72E58027455F3100BD3D97 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

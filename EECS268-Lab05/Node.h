@@ -5,8 +5,8 @@ template <typename T>
 class Node {
 
 private:
-	T m_entry;
-	Node<T>* m_next_node;
+	T entry;
+	Node<T>* next_node;
 	
 public:
 	Node();
@@ -17,7 +17,7 @@ public:
 	Node<T>* getNext() const;
 	void setNext(const Node<T>* new_next_node);
 	
-}
+};
 
 #include "Node.hpp"
 
