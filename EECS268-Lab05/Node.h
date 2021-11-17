@@ -15,7 +15,7 @@ public:
 	T getEntry() const;
 	void setEntry(const T& new_entry);
 	Node<T>* getNext() const;
-	void setNext(const Node<T>* new_next_node);
+	void setNext(Node<T>* new_next_node);
 	
 };
 

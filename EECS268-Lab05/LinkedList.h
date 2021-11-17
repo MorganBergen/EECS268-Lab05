@@ -12,8 +12,11 @@ private:
 	
 public:
 	LinkedList();
-	
-	
+	T getEntry(int position) const;
+	bool isEmpty() const;
+	int getLength() const;
+	bool insert(int position, const T& new_entry);
+	bool remove(int position);
 	
 };
 
