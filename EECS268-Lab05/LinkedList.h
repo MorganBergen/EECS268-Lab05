@@ -17,6 +17,7 @@ public:
 	int getLength() const;
 	bool insert(int position, const T& new_entry);
 	bool remove(int position);
+	void clear();
 	
 };
 

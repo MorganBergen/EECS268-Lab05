@@ -11,8 +11,9 @@ LinkedList<T>::LinkedList() {
 	m_length = 0;
 }
 
+//try catch block needed
 template <typename T>
-Node<T>* LinkedList<T>::getNodeAt(int position){
+Node<T>* LinkedList<T>::getNodeAt(int position) {
 	
 	std::cout << "\n-- NODE AT POSITION " << position << " WILL BE RETURNED." << std::endl;
 	
@@ -52,10 +53,11 @@ int LinkedList<T>::getLength() const {
 	return(m_length);
 }
 
+//try catch block needed
 template <typename T>
 bool LinkedList<T>::insert(int position, const T& new_entry) {
 	
-	std::cout << "-- THE NEW ENTRY " << new_entry << " AT POSITION ";
+	std::cout << "\n-- THE NEW ENTRY " << new_entry << " AT POSITION ";
 	std::cout << position << " WILL BE INSERTED INTO THE LIST." << std::endl;
 	
 	bool valid_position = (position >= 1) && (position <= m_length + 1);
@@ -102,8 +104,44 @@ bool LinkedList<T>::insert(int position, const T& new_entry) {
 template <typename T>
 bool LinkedList<T>::remove(int position) {
 	
+	std::cout << "\n-- A NODE AT POSITION ";
+	std::cout << position << " WILL BE REMOVED FROM THE LIST." << std::endl;
+	
 	bool valid_position = (position >= 1) && (position <= m_length);
+	
+	if (valid_position) {
+		Node<T>* prev_ptr = nullptr;
+		Node<T>* target_ptr = nullptr;
+		
+		if (position == 1) {
+			target_ptr = headptr;
+			headptr = headptr -> getNext();
+		} else {
+			prev_ptr = getNodeAt(position - 1);
+			target_ptr = prev_ptr -> getNext();
+			prev_ptr -> setNext(target_ptr -> getNext());
+		}
+		
+		target_ptr -> setNext(nullptr);
+		delete target_ptr;
+		target_ptr = nullptr;
+		
+		m_length--;
+		
+	} else {
+		throw (std::runtime_error("position is invalid, and thus the node requested to be removed does not exist."));
+	}
+	
 	return (valid_position);
 	
-	
 }
+
+template <typename T>
+void LinkedList<T>::clear() {
+	std::cout << "\n-- A NODE AT POSITION 1 WILL BE REMOVED FROM THE LIST." << std::endl;
+	
+	while (!isEmpty()) {
+		remove(1);
+	}
+}
+
