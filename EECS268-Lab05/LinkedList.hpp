@@ -64,21 +64,24 @@ bool LinkedList<T>::insert(int position, const T& new_entry) {
 	if (valid_position) {
 		
 		Node<T>* insert_ptr = nullptr;
+		Node<T>* prev_ptr = nullptr;
+		Node<T>* target_ptr = nullptr;
+		
 		insert_ptr = new Node<T>(new_entry);
 		
-		if (valid_position == 1) {
-			std::cout << std::endl;
+		if (position == 1) {
+			
+			//inserts a new node at the beginning of the chain
 			insert_ptr -> setNext(headptr);
 			headptr = insert_ptr;
 			
 		} else {
-			Node<T>* prev_ptr = nullptr;
-			Node<T>* target_ptr = nullptr;
-			prev_ptr = getNodeAt(position - 1);
-			target_ptr = prev_ptr -> getNext();
 			
+			prev_ptr = getNodeAt(new_position - 1);
+			target_ptr = prev_ptr -> getNext();
 			insert_ptr -> setNext(target_ptr);
 			prev_ptr -> setNext(insert_ptr);
+			
 			
 		}
 		
