@@ -67,7 +67,7 @@ bool LinkedList<T>::insert(int position, const T& new_entry) {
 		insert_ptr = new Node<T>(new_entry);
 		
 		if (valid_position == 1) {
-			
+			std::cout << std::endl;
 			insert_ptr -> setNext(headptr);
 			headptr = insert_ptr;
 			
