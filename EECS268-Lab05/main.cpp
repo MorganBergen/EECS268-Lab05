@@ -1,5 +1,6 @@
 #include "LinkedList.h"
 #include <string>
+#include <stdexcept>
 #include <iostream>
 
 void truth();
@@ -10,12 +11,31 @@ int main(int argc, const char * argv[]) {
 	LinkedList<std::string>* groceries;
 	groceries = new LinkedList<std::string>();
 	
+
+	try {
+		groceries -> insert(1, "apples");
+		groceries -> insert(2, "bananas");
+		groceries -> insert(3, "sweet potatoes");
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+	
+	try {
+		int length = groceries -> getLength();
+		std::cout << "\nlength of the groceries list is == " << length << std::endl;
+		
+		for (int i = 1; i <= length; i++) {
+			std::cout << groceries -> getEntry(i) << std::endl;
+		}
+		
+	} catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
 	
 	
 	
 	
-	
-	
+	std::cout << std::endl;
 	return (0);
 }
 

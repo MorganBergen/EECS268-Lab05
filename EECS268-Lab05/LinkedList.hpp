@@ -53,23 +53,13 @@ int LinkedList<T>::getLength() const {
 	return(m_length);
 }
 
-//try catch block needed
+/// try catch block for calling this is required
+/// @param position is the specific location within the linked list to remove the node, see valid_position variable for the position's conditions
+/// @param new_entry is the entry within a node, called specifically T entry in the node class that you can enter data into
 template <typename T>
 bool LinkedList<T>::insert(int position, const T& new_entry) {
 	
-	std::cout << "\n-- THE NEW ENTRY " << new_entry << " AT POSITION ";
-	std::cout << position << " WILL BE INSERTED INTO THE LIST." << std::endl;
-	
 	bool valid_position = (position >= 1) && (position <= m_length + 1);
-	
-	if (valid_position == true) {
-		std::cout << "the position of " << position << " is valid." << std::endl;
-	} else {
-		std::cout << "(position >= 1)" << std::endl;
-		std::cout << "(" << position << " >= " << 1 << ")" << std::endl;
-		std::cout << "(position <= m_length + 1)" << std::endl;
-		std::cout << "(" << position << " <= " << (m_length+1) << ")" << std::endl;
-	}
 	
 	if (valid_position) {
 		
@@ -93,14 +83,20 @@ bool LinkedList<T>::insert(int position, const T& new_entry) {
 		}
 		
 		m_length++;
+		std::cout << "\n-- THE NEW ENTRY " << new_entry << " AT POSITION ";
+		std::cout << position << " HAS BEEN BE INSERTED INTO THE LIST." << std::endl;
 		
 	} else {
-		throw (std::runtime_error("invalid position"));
+		std::cout << "\n-- THE NEW ENTRY " << new_entry << " AT POSITION ";
+		std::cout << position << " FAILED TO BE INSERTED INTO THE LIST.\n" << std::endl;
+		throw (std::runtime_error("invalid position\n"));
 	}
 	
 	return (valid_position);
 }
 
+/// use the try catch block
+/// @param position the specific location within the linked list to remove the node
 template <typename T>
 bool LinkedList<T>::remove(int position) {
 	
@@ -144,4 +140,58 @@ void LinkedList<T>::clear() {
 		remove(1);
 	}
 }
+
+template <typename T>
+T LinkedList<T>::getEntry(int position) {
+	
+	std::cout << "\n-- AN ENTRY FROM THE NODE AT POSITION " << position << " HAS BEEN REQUESTED TO BE RETURNED." << std::endl;
+	
+	bool valid_position = (position >= 1) && (position <= m_length);
+	
+	if (valid_position) {
+		
+		Node<T>* newNode = nullptr;
+		newNode = new Node<T>();
+		newNode = getNodeAt(position);
+		
+		return (newNode -> getEntry());
+		
+		
+	} else {
+		throw (std::runtime_error("invalid position."));
+	}
+	
+	return(0);
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
