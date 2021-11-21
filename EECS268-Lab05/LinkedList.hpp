@@ -11,11 +11,12 @@ LinkedList<T>::LinkedList() {
 	m_length = 0;
 }
 
-//try catch block needed
 template <typename T>
+/// try catch block for calling this method is required
+/// @param position is the specific location within the linked list to return the node object.
 Node<T>* LinkedList<T>::getNodeAt(int position) {
 	
-	std::cout << "\n-- NODE AT POSITION " << position << " WILL BE RETURNED." << std::endl;
+//	std::cout << "\n-- NODE AT POSITION " << position << " WILL BE RETURNED." << std::endl;
 	
 	bool valid_position = (position >= 1) && (position <= m_length);
 	
@@ -77,7 +78,7 @@ bool LinkedList<T>::insert(int position, const T& new_entry) {
 			
 		} else {
 			
-			prev_ptr = getNodeAt(new_position - 1);
+			prev_ptr = getNodeAt(position - 1);
 			target_ptr = prev_ptr -> getNext();
 			insert_ptr -> setNext(target_ptr);
 			prev_ptr -> setNext(insert_ptr);
@@ -147,7 +148,7 @@ void LinkedList<T>::clear() {
 template <typename T>
 T LinkedList<T>::getEntry(int position) {
 	
-	std::cout << "\n-- AN ENTRY FROM THE NODE AT POSITION " << position << " HAS BEEN REQUESTED TO BE RETURNED." << std::endl;
+//	std::cout << "\n-- AN ENTRY FROM THE NODE AT POSITION " << position << " HAS BEEN REQUESTED TO BE RETURNED." << std::endl;
 	
 	bool valid_position = (position >= 1) && (position <= m_length);
 	

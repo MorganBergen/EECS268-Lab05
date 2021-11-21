@@ -3,26 +3,26 @@
 #include <iostream>
 
 template <typename T>
-Node<T>::Node(){
+Node<T>::Node() {
 	//	std::cout << "\n---- Node() \n---- AN EMPTY NODE HAS BEEN CREATED [Ø" << entry << " -> nullptr]" << std::endl;
 }
 
 template <typename T>
-Node<T>::Node(const T& new_entry){
+Node<T>::Node(const T& new_entry) {
 	entry = new_entry;
 	next_node = nullptr;
 	//	std::cout << "\n---- Node(const T& new_entry \n---- A NEW NODE HAS BEEN CREATED [" << new_entry << " -> nullptr]" << std::endl;
 }
 
 template <typename T>
-Node<T>::Node(const T& new_entry, Node<T>* new_next_node){
+Node<T>::Node(const T& new_entry, Node<T>* new_next_node) {
 	entry = new_entry;
 	next_node = new_next_node;
 	//	std::cout << "\n---- Node(const T& new_entry, Node<T>* new_next_node) \n---- A NEW NODE HAS BEEN CREATED [" << new_entry << " -> " << next_node -> getEntry << "]"<< std::endl;
 }
 
 template <typename T>
-void Node<T>::setEntry(const T& new_entry){
+void Node<T>::setEntry(const T& new_entry) {
 	//	std::cout << "\n---- setEntry(const T& new_entry \n---- A NEW ENTRY HAS BEEN SET IN THE NODE" << std::endl;
 	entry = new_entry;
 }

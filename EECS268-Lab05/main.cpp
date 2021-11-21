@@ -22,10 +22,10 @@ int main(int argc, const char * argv[]) {
 	
 	try {
 		int length = groceries -> getLength();
-		std::cout << "\nlength of the groceries list is == " << length << std::endl;
-		
+	
+		std::cout << "\ngrocery list: " << std::endl;
 		for (int i = 1; i <= length; i++) {
-			std::cout << groceries -> getEntry(i) << std::endl;
+			std::cout << i << ". " << groceries -> getEntry(i) << std::endl;
 		}
 		
 	} catch (std::exception &e) {
