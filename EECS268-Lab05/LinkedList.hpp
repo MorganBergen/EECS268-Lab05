@@ -25,7 +25,7 @@ Node<T>* LinkedList<T>::getNodeAt(int position) {
 		Node<T>* jumper = nullptr;
 		jumper = headptr;
 		
-		for (int skip = 1; skip < position; skip++) {
+		for (int i = 1; i < position; i++) {
 			jumper = jumper -> getNext();
 		}
 		
@@ -82,7 +82,6 @@ bool LinkedList<T>::insert(int position, const T& new_entry) {
 			target_ptr = prev_ptr -> getNext();
 			insert_ptr -> setNext(target_ptr);
 			prev_ptr -> setNext(insert_ptr);
-			
 			
 		}
 		
