@@ -16,6 +16,7 @@ int main(int argc, const char * argv[]) {
 		groceries -> insert(1, "apples");
 		groceries -> insert(2, "bananas");
 		groceries -> insert(3, "sweet potatoes");
+		
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
@@ -31,9 +32,6 @@ int main(int argc, const char * argv[]) {
 	} catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
-	
-	
-	
 	
 	std::cout << std::endl;
 	return (0);
