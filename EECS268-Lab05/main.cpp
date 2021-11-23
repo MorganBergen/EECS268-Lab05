@@ -3,13 +3,11 @@
 #include <stdexcept>
 #include <iostream>
 
-
 int main() {
 
 	LinkedList<std::string>* groceries;
 	groceries = new LinkedList<std::string>();
 	
-
 	try {
 		groceries -> insert(1, "apples");
 		std::cout << groceries -> getLength() << std::endl;
@@ -40,3 +38,21 @@ int main() {
 }
 
 
+/*
+ commands for lldb debugger
+
+	 (gdb) ./exec						(lldb) ./exec
+	 (gdb) break:fileName:lineNumer		(lldb) b fileName.cpp:lineNumber
+	 (gdb) print variable name			(lldb) print variableName
+	 (gdb) step							(lldb) step
+	 (gdb) print * ptr @ sizeOfArray	(lldb) parray sizeNumberOfArray ptr
+	 (gdb) info locals					(lldb) frame variable
+	 (gdb) next							(lldb) tread step-over
+	 (gdb) next							(lldb) next
+	 (gdb) disable 						(lldb) breakpoint disable 1
+	 (gdb) continue
+	 (gdb) quit							(lldb) quit
+	 (gdb) info break					(lldb) breakpoint list
+	 (gdb) shell clear					(lldb) clear
+
+ */
