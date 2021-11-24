@@ -40,7 +40,7 @@ int LinkedList<T>::getLength() const {
 }
 
 template <typename T>
-bool LinkedList<T>::insert(int position, const T& new_entry) {
+void LinkedList<T>::insert(int position, const T& new_entry) {
 	
 	bool valid_position = (position >= 1) && (position <= m_length + 1);
 	if (valid_position) {
@@ -61,11 +61,10 @@ bool LinkedList<T>::insert(int position, const T& new_entry) {
 	} else {
 		throw (std::runtime_error("invalid position\n"));
 	}
-	return (valid_position);
 }
 
 template <typename T>
-bool LinkedList<T>::remove(int position) {
+void LinkedList<T>::remove(int position) {
 	
 	bool valid_position = (position >= 1) && (position <= m_length);
 	if (valid_position) {
@@ -86,7 +85,6 @@ bool LinkedList<T>::remove(int position) {
 	} else {
 		throw (std::runtime_error("position is invalid, and thus the node requested to be removed does not exist."));
 	}
-	return (valid_position);
 }
 
 template <typename T>
@@ -109,11 +107,6 @@ T LinkedList<T>::getEntry(int position) {
 		throw (std::runtime_error("invalid position."));
 	}
 	return(0);
-}
-
-template <typename T>
-LinkedList<T>::~LinkedList(){
-	clear();
 }
 
 

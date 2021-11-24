@@ -11,14 +11,23 @@ private:
 	Node<T>* getNodeAt(int position);
 	
 public:
-	LinkedList ();
-	~LinkedList ();
-	T getEntry (int position);
-	bool isEmpty () const;
-	int getLength () const;
-	bool insert (int position, const T& new_entry);
-	bool remove (int position);
+	LinkedList();
+	~LinkedList(){};
+	void insert(int position, const T& new_entry);
+	T getEntry(int position);
+	bool isEmpty() const;
+	
+	int getLength() const;
+	
+	void remove(int position);
 	void clear();
+	
+	/// replaces the new entry at the given position in this list.
+	/// @param position is the position of the netry to replace; 1 ≤ position ≤ getLength()
+	/// @param new_entry is the replacement entry
+	/// @return None.  The indicated entry is replaced.
+	void setEntry(int position, const T& new_entry);
+	
 	
 };
 

@@ -30,8 +30,6 @@ int main() {
 		std::cerr << e.what() << std::endl;
 	}
 	
-	groceries -> ~LinkedList<std::string>();
-	
 	std::cout << std::endl;
 	return (0);
 }
