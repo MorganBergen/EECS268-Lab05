@@ -91,7 +91,6 @@ bool LinkedList<T>::remove(int position) {
 
 template <typename T>
 void LinkedList<T>::clear() {
-	
 	while (!isEmpty()) {
 		remove(1);
 	}
@@ -112,6 +111,10 @@ T LinkedList<T>::getEntry(int position) {
 	return(0);
 }
 
+template <typename T>
+LinkedList<T>::~LinkedList(){
+	clear();
+}
 
 
 

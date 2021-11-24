@@ -8,15 +8,12 @@ int main() {
 	LinkedList<std::string>* groceries;
 	groceries = new LinkedList<std::string>();
 	
+	
 	try {
 		groceries -> insert(1, "apples");
-		std::cout << groceries -> getLength() << std::endl;
 		groceries -> insert(2, "bananas");
-		std::cout << groceries -> getLength() << std::endl;
 		groceries -> insert(3, "sweet potatoes");
-		std::cout << groceries -> getLength() << std::endl;
 		groceries -> insert(4, "argula");
-		std::cout << groceries -> getLength() << std::endl;
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
@@ -32,6 +29,8 @@ int main() {
 	} catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
+	
+	groceries -> ~LinkedList<std::string>();
 	
 	std::cout << std::endl;
 	return (0);

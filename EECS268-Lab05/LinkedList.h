@@ -11,12 +11,13 @@ private:
 	Node<T>* getNodeAt(int position);
 	
 public:
-	LinkedList();
-	T getEntry(int position);
-	bool isEmpty() const;
-	int getLength() const;
-	bool insert(int position, const T& new_entry);
-	bool remove(int position);
+	LinkedList ();
+	~LinkedList ();
+	T getEntry (int position);
+	bool isEmpty () const;
+	int getLength () const;
+	bool insert (int position, const T& new_entry);
+	bool remove (int position);
 	void clear();
 	
 };
