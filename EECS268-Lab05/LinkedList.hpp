@@ -1,13 +1,47 @@
+#include "Node.h"
+#include "LinkedList.h"
 #include <stdio.h>
 #include <iostream>
 #include <stdexcept>
-#include "Node.h"
-#include "LinkedList.h"
 
 template <typename T>
 LinkedList<T>::LinkedList() {
 	headptr = nullptr;
 	m_length = 0;
+}
+
+template <typename T>
+LinkedList<T>::LinkedList(const LinkedList<T> & aList){
+	
+	//declarations
+	Node<T>* origChainPtr = nullptr;
+	Node<T>* newChainPtr = nullptr;
+	
+	origChainPtr = aList.headptr;
+	
+	if (origChainPtr == nullptr) {
+		headptr = aList.headptr;
+		m_length = aList.m_length;
+	} else {
+		
+		headptr = new Node<T>();
+		newChainPtr = headptr;
+		headptr -> setEntry(origChainPtr -> getEntry());
+		m_length++;
+		origChainPtr = origChainPtr -> getNext();
+		
+	
+		while (origChainPtr != nullptr) {
+			T nextEntry = origChainPtr -> getEntry();
+			Node<T>* newNodePtr = new Node<T>(nextEntry);
+			newChainPtr -> setNext(newNodePtr);
+			m_length++;
+			newChainPtr = newChainPtr -> getNext();
+			origChainPtr = origChainPtr -> getNext();
+			
+		}
+		newChainPtr -> setNext(nullptr);
+	}
 }
 
 template <typename T>
@@ -27,6 +61,11 @@ Node<T>* LinkedList<T>::getNodeAt(int position) {
 }
 
 template <typename T>
+LinkedList<T>::~LinkedList() {
+	clear();
+}
+
+template <typename T>
 bool LinkedList<T>::isEmpty() const {
 	if (m_length == 0) {
 		return(true);
@@ -35,7 +74,7 @@ bool LinkedList<T>::isEmpty() const {
 }
 
 template <typename T>
-int LinkedList<T>::getLength() const {
+int LinkedList<T>::length() const {
 	return(m_length);
 }
 
@@ -106,35 +145,22 @@ T LinkedList<T>::getEntry(int position) {
 	} else {
 		throw (std::runtime_error("invalid position."));
 	}
-	return(0);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+template <typename T>
+void LinkedList<T>::setEntry(int position, const T& new_entry) {
+	
+	bool valid_position = (position >= 1) && (position <= length());
+	
+	if (valid_position) {
+		
+		remove(position);
+		insert(position, new_entry);
+		
+	} else {
+		throw (std::runtime_error("invalid position"));
+	}
+	
+	
+	
+}

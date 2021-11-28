@@ -1,9 +1,14 @@
-lab05:  main.o
-	g++ -g -std=c++11 -Wall main.o -o lab05
-	
-main.o:  main.cpp LinkedList.h LinkedList.hpp Node.h Node.hpp
-	g++ -g -std=c++11 -Wall -c main.cpp
-	
+Lab05: main.o Executive.o
+	g++ -std=c++11 -g -Wall main.o Executive.o -o Lab05
+
+main.o: Executive.h main.cpp
+	g++ -std=c++11 -g -Wall -c main.cpp
+
+Executive.o: Executive.h Executive.cpp
+	g++ -std=c++11 -g -Wall -c Executive.cpp
+
 clean:
-	rm *.o lab05
+	rm *.o Lab05
+
+
 

@@ -12,27 +12,18 @@ private:
 	
 public:
 	LinkedList();
-	~LinkedList(){};
+	LinkedList(const LinkedList<T> & orginal);
+	~LinkedList();
 	void insert(int position, const T& new_entry);
-	T getEntry(int position);
-	bool isEmpty() const;
-	
-	int getLength() const;
-	
 	void remove(int position);
+	T getEntry(int position);
 	void clear();
-	
-	/// replaces the new entry at the given position in this list.
-	/// @param position is the position of the netry to replace; 1 ≤ position ≤ getLength()
-	/// @param new_entry is the replacement entry
-	/// @return None.  The indicated entry is replaced.
+	int length() const;
+	bool isEmpty() const;
 	void setEntry(int position, const T& new_entry);
-	
 	
 };
 
 #include "LinkedList.hpp"
 
 #endif
-
-
