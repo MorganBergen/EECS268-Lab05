@@ -2,17 +2,18 @@
 #define Executive_h
 
 #include <stdio.h>
-#include "LinkedList.h"
+#include "ListInterface.h"
+#include "Browser.h"
 
 class Executive {
 private:
-	LinkedList<std::string>* list;
-
+	Browser history;
+	
 public:
+	void main();
 	Executive();
 	~Executive();
 	void run();
-	void copy();
 	
 };
 

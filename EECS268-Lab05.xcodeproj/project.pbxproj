@@ -12,6 +12,7 @@
 		EB5716F12745691400CEB134 /* LinkedList.hpp in Sources */ = {isa = PBXBuildFile; fileRef = EB5716F02745691400CEB134 /* LinkedList.hpp */; };
 		EB72E58027455F3100BD3D97 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB72E57F27455F3100BD3D97 /* main.cpp */; };
 		EBBFFE3A2750339100C6DABB /* Executive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBBFFE382750339100C6DABB /* Executive.cpp */; };
+		EBC63C7C2753EA7300AA6CFA /* Browser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBC63C7A2753EA7300AA6CFA /* Browser.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,8 @@
 		EBBFFE382750339100C6DABB /* Executive.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Executive.cpp; sourceTree = "<group>"; };
 		EBBFFE392750339100C6DABB /* Executive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Executive.h; sourceTree = "<group>"; };
 		EBC63C792753E2D700AA6CFA /* ListInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListInterface.h; sourceTree = "<group>"; };
+		EBC63C7A2753EA7300AA6CFA /* Browser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Browser.cpp; sourceTree = "<group>"; };
+		EBC63C7B2753EA7300AA6CFA /* Browser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Browser.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				EB5716F22745692800CEB134 /* LinkedList.h */,
+				EBC63C7A2753EA7300AA6CFA /* Browser.cpp */,
+				EBC63C7B2753EA7300AA6CFA /* Browser.h */,
 				EBC63C792753E2D700AA6CFA /* ListInterface.h */,
 				EB5716F02745691400CEB134 /* LinkedList.hpp */,
 				EB72E57F27455F3100BD3D97 /* main.cpp */,
@@ -139,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBC63C7C2753EA7300AA6CFA /* Browser.cpp in Sources */,
 				EBBFFE3A2750339100C6DABB /* Executive.cpp in Sources */,
 				EB5716EE2745658000CEB134 /* Node.hpp in Sources */,
 				EB5716E92745653000CEB134 /* makefile in Sources */,

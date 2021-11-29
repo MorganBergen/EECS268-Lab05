@@ -1,5 +1,6 @@
 #include "Node.h"
 #include "LinkedList.h"
+#include "ListInterface.h"
 #include <stdio.h>
 #include <iostream>
 #include <stdexcept>
