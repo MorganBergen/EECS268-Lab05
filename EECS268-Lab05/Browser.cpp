@@ -2,6 +2,7 @@
 #include "LinkedList.h"
 #include "ListInterface.h"
 #include <stdexcept>
+#include <iomanip>
 #include <string>
 
 Browser::Browser() {
@@ -14,17 +15,32 @@ Browser::~Browser() {
 }
 
 void Browser::navigateTo(std::string url) {
+	
+	int insertion;
+	
+	if (current == history_list -> length()) {
+		insertion = history_list -> length();
+	} else {
+		insertion = history_list -> length() - current;
+	}
+	
 	try {
 		
-		int position = history_list -> length();
-		
-		if (position == 0) {
-			history_list -> insert(position + 1, url);
-			current = position + 1;
+		if (history_list -> length() == 0) {
+			history_list -> insert(insertion + 1, url);
+			current = insertion + 1;
+		} else if (history_list -> length() == current) {
+			history_list -> insert(insertion + 1, url);
+			current = insertion + 1;
 		} else {
-			history_list -> insert(position + 1, url);
-			current = position + 1;
+			for (int i = history_list -> length(); i > current; i--) {
+				history_list -> remove(i);
+			}
+			current++;
+			history_list -> insert(current, url);
+			
 		}
+		
 		
 	} catch (std::runtime_error& e) {
 		std::cerr << e.what() << std::endl;
@@ -34,42 +50,46 @@ void Browser::navigateTo(std::string url) {
 void Browser::print() {
 	
 	std::cout << "\nOldest\n===========\n";
-	
-	
 	try {
 		for (int i = 1; i <= history_list -> length(); i++) {
 			if (i == current) {
-				std::cout << "<URL> " << i << ". " << history_list -> getEntry(i) << " <== current" << std::endl;
+				std::cout << history_list -> getEntry(i);
+				
+				std::cout << std::setfill (' ') << std::setw(20) << "<== current" << std::left << std::endl;
 			} else {
-				std::cout << "<URL> " << i << ". " << history_list -> getEntry(i) << std::endl;
+				std::cout << history_list -> getEntry(i) << std::endl;
 			}
 		}
 		
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
-	
 	std::cout << "===========\nNewest" << std::endl;
+	
 }
 
 void Browser::forward() {
 	
+	if (current == history_list -> length()) {
+		
+	} else if (current > history_list -> length() || current < 0) {
+		std::cerr << "error. invalid current #\n";
+		std::cout << "length of list: " << history_list -> length() << std::endl;
+		std::cout << "current: " << current << std::endl;
+	} else {
+		current++;
+	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void Browser::back() {
+	
+	if (current == 0) {
+		
+	} else if (current > history_list -> length() || current < 0) {
+		std::cerr << "error. invalid current #\n";
+		std::cout << "length of list: " << history_list -> length() << std::endl;
+		std::cout << "current: " << current << std::endl;
+	} else {
+		current--;
+	}
+}

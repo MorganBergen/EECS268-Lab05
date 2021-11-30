@@ -14,9 +14,11 @@ public:
 	Browser();
 	~Browser();
 	void navigateTo(std::string url);
+	void print();
+//	unfinished
 	void back();
 	void forward();
-	void print();
+	
 	
 };
 
