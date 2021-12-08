@@ -28,6 +28,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EB088D96275D753200E84B76 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		EB5716E8274564D200CEB134 /* makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
 		EB5716ED2745658000CEB134 /* Node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
 		EB5716EF2745658B00CEB134 /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 				EB5716E8274564D200CEB134 /* makefile */,
 				EB5716EF2745658B00CEB134 /* Node.h */,
 				EB5716ED2745658000CEB134 /* Node.hpp */,
+				EB088D96275D753200E84B76 /* input.txt */,
 			);
 			path = "EECS268-Lab05";
 			sourceTree = "<group>";

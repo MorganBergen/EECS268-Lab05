@@ -3,14 +3,20 @@
 #include <string>
 #include <stdexcept>
 #include <iostream>
-#include <fstream>
+#include <stdexcept>
 
 int main() {
 	
 	Executive object;
+	
 	object.run();
-	object.run();
-	object.fileIO("hello");
-
+	
+	
+	try {
+		object.fileIO("input.txt");
+	} catch (std::runtime_error& e) {
+		std::cerr << e.what() << std::endl;
+	}
+	
 	return (0);
 }

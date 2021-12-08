@@ -5,6 +5,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <fstream>
+#include <cstdlib>
 
 Executive::Executive() {
 	Browser history;
@@ -39,11 +40,33 @@ void Executive::run() {
 
 void Executive::fileIO(std::string p_file) {
 	
+	std::string commands;
+	
 	std::ifstream inStream;
-
-	inStream.open(m_file);
 	
+	inStream.open(p_file);
 	
+	if (inStream.fail()) {
+		throw (std::runtime_error("file failed to open."));
+	} else if (inStream.is_open()) {
+	
+		
+		
+		do {
+			inStream >> commands;
+			
+			
+			
+			
+		} while (<#condition#>);
+		
+		
+		
+		
+		
+	}
+	
+	inStream.close();
 	
 }
 
